@@ -53,6 +53,15 @@ router.get('/sitemap', (req, res, next) => {
   res.render('sitemap', {page});
 });
 
+router.get('/contact', (req, res, next) => {
+  const page = {
+    name: "お問い合わせ",
+    meta_description: "",
+    meta_keywords: "",
+  }
+  res.render('contact', {page});
+});
+
 //http://localhost:3000/?param=json
 
 module.exports = router;
