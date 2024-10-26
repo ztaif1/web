@@ -60,10 +60,10 @@
   <h1 class="mb-4 mt-4">記事のピックアップ</h1>
 <section id="1">
   <h2>コードレス時代にコードでWeb制作</h2>
-  <% articles.filter(article => article.tags === 'test').slice(0, 2).forEach(article => { %>
+  <% articles.filter(article => article.tag === 'test').slice(0, 2).forEach(article => { %>
   
   <div class="card mt-3 mb-3 pt-1 pb-1">
-    <a href="/article/?id=<%= article.id %>" class="ununderline">
+    <a href="/article/<%= article.id %>" class="ununderline">
     <div class="card-body">
       <h5 class="card-title"><%= article.name %></h5>
       <p class="card-text"><%- article.description%></p>
@@ -71,7 +71,7 @@
   </div>
   </div>
 <% }) %>
-<a type="button" class="btn btn-secondary btn-block mb-3 pt-1 pb-1 w-100" href="/articles/?tags=test">もっと見る</a>
+<a type="button" class="btn btn-secondary btn-block mb-3 pt-1 pb-1 w-100" href="/articles/test">もっと見る</a>
 </section>
 
 <section id="2">

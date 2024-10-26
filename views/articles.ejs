@@ -4,15 +4,20 @@
   .sidebar-fixed {
       position: fixed;  
   };
+  .ununderline {
+    text-decoration: none !important;
+    color: black !important;
+  }
 </style>
-<h1 class="mb-4 mt-4"><%- tag === 'all' ? 'すべての記事' : tag %></h1>
+<h1 class="mb-4 mt-4"><%- tag === 'all' ? 'すべての記事' : "タグ：" + tag %></h1>
   <% const filteredArticles = (!tag || tag === 'all') ? articles : articles.filter(article => article.tag === tag); filteredArticles.forEach(article => {  %>
     <div class="card mt-3 mb-3 pt-1 pb-1">
-        <div class="card-body">
-          <h5 class="card-title"><%= article.name %></h5>
-          <p class="card-text"><%- article.description %></p>
-        </div>  
-      </div>
+      <a href="/article/<%= article.id %>">
+      <div class="card-body">
+        <h5 class="card-title" style="text-decoration: none!important; color: black !important;"><%= article.name %></h5>
+        <p class="card-text"><%- article.description%></p>
+      </div></a>
+    </div>
   <% }) %>
 
 
