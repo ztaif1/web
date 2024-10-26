@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var axios = require('axios');
 
-router.get('/', async (req, res, next) => {
-  let id = String(req.query.id)
+router.get('/:id', async (req, res, next) => {
+  let id = String(req.params.id)
 
   try {
     const response = await axios.get('https://ztaif1.github.io/data/articles.json'); // 元のプロジェクトのエンドポイントを指定
