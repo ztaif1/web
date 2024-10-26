@@ -57,15 +57,7 @@
   <% }) %>
 
 
-  <script>
-    window.addEventListener('scroll', function() {
-      var element = document.getElementById('sidebar');
-      var rect = element.getBoundingClientRect();
-      element.style.position = 'fixed';
-      element.style.top = rect.top + 'px';
-      element.style.left = rect.left + 'px';
-    });
-  </script>
+  
   <script>
     document.getElementById('toggle-dark-mode').addEventListener('click', function(event) {
         event.preventDefault(); // リンクのデフォルト動作を防ぐ
