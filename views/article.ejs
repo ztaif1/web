@@ -9,21 +9,45 @@
   <% articles.filter(article => article.id === id).forEach(article => { %>
     <div class="container mt-5">
       <div class="row">
+        <div class="col-md-2 d-md-block d-none">
+          <div class="sidebar" id="sidebar">
+          <p>広告</p>
+          <p>後日掲載予定</p>
+          </div>
+        </div>
         <div class="col-md-8">
           <h1><%= article.name %></h1>
           <hr class="mt-3 mb-3">
-          <p>投稿者：<%= article.author %></p>
+          <p>投稿者：<a href="/about" style="text-decoration: none!important; color: black !important;"><%= article.author %></a></p>
           <p>執筆日時：<%= article.date %></p>
-          <p>タグ（種類）：<%= article.tag %></p>
+          <p>タグ（種類）：<a href="<%= article.tag %>" style="text-decoration: none!important; color: black !important;"><%= article.tag %></a></p>
           <hr class="mt-3 mb-3">
           <div>
+            <!--
+
+            <div class="card d-md-none d-block">
+            <div class="card-header">
+            <h5 class="mb-0">目次</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#section1">セクション1</a></li>
+              <li class="list-group-item"><a href="#section2">セクション2</a></li>
+              <li class="list-group-item"><a href="#section3">セクション3</a></li>
+              <li class="list-group-item"><a href="#section4">セクション4</a></li>
+              <li class="list-group-item"><a href="#section5">セクション5</a></li>
+            </ul>
+            </div>
+
+           -->
+           
               <%- article.content %>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="sidebar-fixed" id="sidebar">
-          <h3>サイドバー</h3>
+        <div class="col-md-2">
+          <div class="sidebar-fixed d-md-block d-none" id="sidebar">
+          <div style="text-decoration: none!important; color: black !important;">
           <%- article.sidebar %>
+          </div>
           </div>
         </div>
       </div>
@@ -40,4 +64,10 @@
       element.style.left = rect.left + 'px';
     });
   </script>
+  <script>
+    document.getElementById('toggle-dark-mode').addEventListener('click', function(event) {
+        event.preventDefault(); // リンクのデフォルト動作を防ぐ
+        document.body.classList.toggle('dark-mode');
+    });
+</script>
 <%- include('footer') %>
