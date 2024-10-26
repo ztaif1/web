@@ -8,7 +8,7 @@ var axios = require('axios');
 router.get('/', async (req, res, next) => {
 
   try {
-    const response = await axios.get('https://montsp.github.io/data/articles.json'); // 元のプロジェクトのエンドポイントを指定
+    const response = await axios.get('https://ztaif1.github.io/data/articles.json'); // 元のプロジェクトのエンドポイントを指定
     let data = {
       articles: response.data,
     };
@@ -21,7 +21,7 @@ router.get('/', async (req, res, next) => {
 router.get('/ja', async (req, res, next) => {
 
   try {
-    const response = await axios.get('https://montsp.github.io/data/articles.json'); // 元のプロジェクトのエンドポイントを指定
+    const response = await axios.get('https://ztaif1.github.io/data/articles.json'); // 元のプロジェクトのエンドポイントを指定
     let data = {
       articles: response.data,
     };
