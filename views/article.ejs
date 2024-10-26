@@ -1,0 +1,25 @@
+<%- include('header') %>
+
+<style>
+  .sidebar-fixed {
+      position: fixed;  
+  };
+</style>
+
+  <% articles.filter(article => article.id === id).forEach(article => { %>
+    <h2><%= article.title %></h2>
+    <p><strong>Author:</strong> <%= article.author %></p>
+    <p><%- article.content %></p>
+  <% }) %>
+
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var element = document.getElementById('sidebar');
+      var rect = element.getBoundingClientRect();
+      element.style.position = 'fixed';
+      element.style.top = rect.top + 'px';
+      element.style.left = rect.left + 'px';
+    });
+  </script>
+<%- include('footer') %>

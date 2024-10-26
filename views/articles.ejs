@@ -1,0 +1,29 @@
+<%- include('header') %>
+
+<style>
+  .sidebar-fixed {
+      position: fixed;  
+  };
+</style>
+<h1 class="mb-4 mt-4"><%- tags === 'all' ? 'すべての記事' : tags %></h1>
+  <% const filteredArticles = (!tags || tags === 'all') ? articles : articles.filter(article => article.tags === tags); filteredArticles.forEach(article => {  %>
+    <div class="card mt-3 mb-3 pt-1 pb-1">
+        <div class="card-body">
+          <h5 class="card-title"><%= article.name %></h5>
+          <p class="card-text"><%- article.description %></p>
+        </div>  
+      </div>
+  <% }) %>
+
+
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var element = document.getElementById('sidebar');
+      var rect = element.getBoundingClientRect();
+      element.style.position = 'fixed';
+      element.style.top = rect.top + 'px';
+      element.style.left = rect.left + 'px';
+    });
+  </script>
+<%- include('footer') %>

@@ -1,0 +1,67 @@
+</div>
+<div class="container">
+  <style>
+    footer {
+        background-color: white;
+        color: white;
+    }
+    footer a {
+        color: black; /* リンクの文字色を黒に設定 */
+        text-decoration: none; /* アンダーラインを表示 */
+    }
+    footer h5 {
+        color: black; /* リンクの文字色を黒に設定 */
+        text-decoration: none; /* アンダーラインを表示 */
+    }
+    footer a:hover {
+        text-decoration: none; /* ホバー時にアンダーラインを削除 */
+    }
+</style>
+<script>
+    window.addEventListener('scroll', function() {
+    var element = document.getElementById('sidebar');
+    var rect = element.getBoundingClientRect();
+    element.style.position = 'fixed';
+    element.style.top = rect.top + 'px';
+    element.style.left = rect.left + 'px';
+    });
+  </script>
+  <footer class="mt-5">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>リンク集</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/">ホーム</a></li>
+                    <li><a href="/articles?tags=all">記事一覧</a></li>
+                    <li><a href="#">About US</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>各種情報</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">SNSリンク集</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                    <li><a href="#">サイトマップ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>各種SNS</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">X（旧Twitter）</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">Quora</a></li>
+                    <li><a href="#">Scrtach</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="text-center py-3">
+        <small class="text-muted">© 2024 zimt.com All rights reserved.</small>
+    </div>
+</footer>
+</div>
+<script src="/javascripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>

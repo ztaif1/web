@@ -1,0 +1,95 @@
+<%-include('header') %>
+<style>
+  .ununderline {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+<div style="text-decoration: none;">
+<a class="ununderline" href="/">
+  <div class="mb-3 pb-3 pt-3 shadow">
+<h1 class="display-1 great-vibes-regular text-center">Zimts.com</h1>
+<h2 class="display-6 text-center">趣味を多方面に！</h2>
+</div>
+</a>
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-slide="5000">
+  <div class="carousel-inner">
+      <div class="carousel-item active">  
+          <div class="card">
+            <a  class="ununderline"  href="#1">
+              <div class="card-body">
+                  <h5 class="card-title">コードレス時代にコードでWeb制作</h5>
+                  <p class="card-text">AIを利用して、ノーコードよりも安く（ドメイン費以外は無料）、運用も簡単なWebの制作方法を紹介しています。</p>
+              </div>
+          </div></a>
+      </div>
+      <div class="carousel-item">
+        <a  class="ununderline"  href="#2">
+          <div class="card">
+            <div class="card-body">
+                  <h5 class="card-title">ソフトウェア・ハードウェア比較</h5>
+                  <p class="card-text">様々な情報をもとに、ソフトウェアやハードウェアの比較を行い、サイトに掲載しています。利用するものをそれぞれ選ぶときに参考にしていただけると嬉しいです。</p>
+              </div>
+          </div></a>
+      </div>
+      <div class="carousel-item">
+        <a  class="ununderline"  href="#3">
+          <div class="card">
+            <div class="card-body">
+                  <h5 class="card-title">Scratch・その他プログラミングなど</h5>
+                  <p class="card-text">Scratchを使ってプログラムを組むチュートリアルや、実践などを紹介していきます。</p>
+              </div>
+          </div></a>
+      </div>
+  </div>
+
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">前へ</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">次へ</span>
+  </button>
+</div>
+
+<div>
+  <h1 class="mb-4 mt-4">記事のピックアップ</h1>
+<section id="1">
+  <h2>コードレス時代にコードでWeb制作</h2>
+  <% articles.filter(article => article.tags === 'test').slice(0, 2).forEach(article => { %>
+  
+  <div class="card mt-3 mb-3 pt-1 pb-1">
+    <a href="/article/?id=<%= article.id %>" class="ununderline">
+    <div class="card-body">
+      <h5 class="card-title"><%= article.name %></h5>
+      <p class="card-text"><%- article.description%></p>
+    </div>
+  </div>
+  </div>
+<% }) %>
+<a type="button" class="btn btn-secondary btn-block mb-3 pt-1 pb-1 w-100" href="/articles/?tags=test">もっと見る</a>
+</section>
+
+<section id="2">
+  <h2>セクション2</h2>
+  <p>ここにセクション2の内容が入ります。</p>
+</section>
+
+<section id="3">
+  <h2>セクション3</h2>
+  <p>ここにセクション3の内容が入ります。</p>
+</section>
+</div>
+</div>    
+
+
+
+
+
+
+  
+<%-include('footer') %>
