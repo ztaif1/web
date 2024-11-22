@@ -38,7 +38,7 @@ router.get('/about', (req, res, next) => {
 router.get('/policy', (req, res, next) => {
   const page = {
     name: "プライバシーポリシー",
-    meta_description: "",
+    meta_description: "hello",
     meta_keywords: "",
   }
   res.render('policy', {page});
